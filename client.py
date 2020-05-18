@@ -50,7 +50,7 @@ class AlamedaOtcPortalClient:
             return data['result']
 
     def get_accepted_quotes(self, limit: int = 10000,
-                                before: Optional[300] = None) -> List[Dict]:
+                                before: Optional[int] = None) -> List[Dict]:
         return self._get('otc/quotes/accepted', params={'limit': max(limit, 300),
                                                         **({'before': before} if before else {})})
 
